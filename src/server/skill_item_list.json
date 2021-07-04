@@ -1,0 +1,258 @@
+{
+  "listName": [
+    {
+      "id": "language",
+      "displayName": "プログラミング言語"
+    },
+    {
+      "id": "framework",
+      "displayName": "フレームワーク"
+    },
+    {
+      "id": "service",
+      "displayName": "サービス"
+    },
+    {
+      "id": "other",
+      "displayName": "その他"
+    }
+  ],
+  "list": {
+    "language": [
+      {
+        "id": "c",
+        "displayName": "C"
+      },
+      {
+        "id": "cplusplus",
+        "displayName": "C++"
+      },
+      {
+        "id": "csharp",
+        "displayName": "C#"
+      },
+      {
+        "id": "css",
+        "displayName": "CSS"
+      },
+      {
+        "id": "go",
+        "displayName": "Go"
+      },
+      {
+        "id": "haskell",
+        "displayName": "Haskell"
+      },
+      {
+        "id": "html",
+        "displayName": "HTML"
+      },
+      {
+        "id": "java",
+        "displayName": "Java"
+      },
+      {
+        "id": "javascript",
+        "displayName": "JavaScript"
+      },
+      {
+        "id": "kotlin",
+        "displayName": "Kotlin"
+      },
+      {
+        "id": "perl",
+        "displayName": "Perl"
+      },
+      {
+        "id": "php",
+        "displayName": "PHP"
+      },
+      {
+        "id": "python",
+        "displayName": "Python"
+      },
+      {
+        "id": "ruby",
+        "displayName": "Ruby"
+      },
+      {
+        "id": "rust",
+        "displayName": "Rust"
+      },
+      {
+        "id": "scala",
+        "displayName": "Scala"
+      },
+      {
+        "id": "scratch",
+        "displayName": "Scratch"
+      },
+      {
+        "id": "swift",
+        "displayName": "Swift"
+      },
+      {
+        "id": "tex",
+        "displayName": "TeX"
+      },
+      {
+        "id": "typescript",
+        "displayName": "TypeScript"
+      }
+    ],
+    "framework": [
+      {
+        "id": "angular",
+        "displayName": "Angular"
+      },
+      {
+        "id": "bootstrap",
+        "displayName": "Bootstrap"
+      },
+      {
+        "id": "django",
+        "displayName": "Django"
+      },
+      {
+        "id": "flutter",
+        "displayName": "Flutter"
+      },
+      {
+        "id": "laravel",
+        "displayName": "Laravel"
+      },
+      {
+        "id": "nodejs",
+        "displayName": "Node.js"
+      },
+      {
+        "id": "nuxtjs",
+        "displayName": "Nuxt.js"
+      },
+      {
+        "id": "react",
+        "displayName": "React"
+      },
+      {
+        "id": "rubyonrails",
+        "displayName": "Ruby on Rails"
+      },
+      {
+        "id": "vuejs",
+        "displayName": "Vue.js"
+      }
+    ],
+    "service": [
+      {
+        "id": "android",
+        "displayName": "Android"
+      },
+      {
+        "id": "apache",
+        "displayName": "Apache"
+      },
+      {
+        "id": "aws",
+        "displayName": "AWS"
+      },
+      {
+        "id": "azure",
+        "displayName": "Azure"
+      },
+      {
+        "id": "blender",
+        "displayName": "Blender"
+      },
+      {
+        "id": "docker",
+        "displayName": "Docker"
+      },
+      {
+        "id": "firebase",
+        "displayName": "Firebase"
+      },
+      {
+        "id": "gas",
+        "displayName": "GAS"
+      },
+      {
+        "id": "gcp",
+        "displayName": "GCP"
+      },
+      {
+        "id": "ios",
+        "displayName": "iOS"
+      },
+      {
+        "id": "linux",
+        "displayName": "Linux"
+      },
+      {
+        "id": "macos",
+        "displayName": "macOS"
+      },
+      {
+        "id": "mysql",
+        "displayName": "MySQL"
+      },
+      {
+        "id": "nginx",
+        "displayName": "Nginx"
+      },
+      {
+        "id": "unity",
+        "displayName": "Unity"
+      },
+      {
+        "id": "windows",
+        "displayName": "Windows"
+      },
+      {
+        "id": "wordpress",
+        "displayName": "WordPress"
+      }
+    ],
+    "other": [
+      {
+        "id": "3dcg",
+        "displayName": "3DCG"
+      },
+      {
+        "id": "ai",
+        "displayName": "人工知能"
+      },
+      {
+        "id": "app",
+        "displayName": "アプリ"
+      },
+      {
+        "id": "electronicwork",
+        "displayName": "電子工作"
+      },
+      {
+        "id": "game",
+        "displayName": "ゲーム"
+      },
+      {
+        "id": "illust",
+        "displayName": "イラスト"
+      },
+      {
+        "id": "music",
+        "displayName": "音楽"
+      },
+      {
+        "id": "task",
+        "displayName": "タスク管理能力"
+      },
+      {
+        "id": "web",
+        "displayName": "サイト"
+      },
+      {
+        "id": "webapp",
+        "displayName": "Webアプリ"
+      }
+    ]
+  }
+}

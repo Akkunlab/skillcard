@@ -1,0 +1,439 @@
+/*------------------------------------
+  Default Style
+------------------------------------*/
+:root {
+  --header-height: 60px;
+  --padding-side: 25px;
+  --section-border-radius: 12px;
+  --button-color: rgb(63, 153, 255);
+  --button-hover-color: rgb(94, 167, 251);
+  --item-border-radius: 5px;
+  --item-color: rgb(255, 255, 255);
+  --item-hover-color: rgb(231, 241, 253);
+  --background-color: rgb(246, 246, 246);
+  --border-color: rgba(197, 197, 197, 0.5);
+  --star-color: rgb(255, 205, 41);
+  --star-false-color: rgb(167, 167, 167);
+  --modal-green: rgb(172, 236, 127);
+  --cross-mark-color: rgba(0,0,0,0.54);
+}
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+}
+body {
+  font-size: 1.6em;
+  margin: 0;
+}
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+object {
+  pointer-events: none;
+}
+button {
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 8px 40px;
+  border-radius: var(--item-border-radius);
+  border: 1px solid var(--border-color);
+  color: var(--item-color);
+  background: var(--button-color);
+  text-align: center;
+  outline: none;
+  box-sizing: border-box;
+}
+button:hover {
+  background: var(--button-hover-color);
+}
+
+/* animation */
+.blocker, .modal, .modal_alert, .skill_item_delete {
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+}
+.blocker.is-show, .modal.is-show, .modal_alert.is-show {  
+  opacity: 1;
+  visibility: visible;
+}
+header.is-blur, main.is-blur {
+  filter: blur(10px);
+}
+.skill_item {
+  opacity: 1;
+  visibility: visible;
+  transition: .3s;
+}
+.skill_item.is-hide {  
+  opacity: 0;
+  visibility: hidden;
+}
+.star_svg {
+  width: 100px;
+  height: 100px;
+  fill: var(--star-color);
+  transition: .3s;
+}
+.star_svg.is-false {
+  fill: var(--star-false-color);
+}
+
+@media screen and (max-width: 800px) {
+  .star_svg {
+    width: 50px;
+    height: 50px;
+  }
+  .skill_item_delete {
+    opacity: 1;
+    visibility: visible;
+  }
+  button {
+    padding: 4px 20px;
+  }
+}
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+/*------------------------------------
+  Blocker
+------------------------------------*/
+.blocker {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+.modal {
+  width: 600px;
+  height: 300px;
+  padding: 30px;
+  text-align: center;
+  border-radius: var(--section-border-radius);
+  background: var(--background-color);
+  box-shadow: 0 1px 2px 0 var(--border-color);
+  z-index: 101;
+}
+.modal_alert {
+  padding: 0 30px;
+  border-radius: var(--item-border-radius);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: rgb(0, 50, 0);
+  background: var(--modal-green);
+  border: 1px solid var(--border-color);
+}
+.modal, .modal_alert {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.modal_close {
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  line-height: 30px;
+  font-size: 3rem;
+  position: absolute;
+  cursor: pointer;
+  color: var(--cross-mark-color);
+}
+.modal_title {
+  margin: 0 0 20px;
+}
+.modal_content {
+  height: 191px;
+  margin-bottom: 20px;
+  background: var(--background-color);
+}
+.modal_code_block {
+  height: 100%;
+  margin: 10px 0;
+  overflow: scroll;
+}
+.modal_code {
+  text-align: left;
+  display: block;
+}
+.modal_star {
+  padding: 24px 0;
+  display: flex;
+  justify-content: center;
+}
+.modal_star_item {
+  margin: 0 10px;
+}
+.modal_star_level {
+  margin:10px 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 800px) {
+  .modal {
+    width: 80%;
+  }
+  .modal_alert {
+    width: 50%;
+  }
+}
+
+/*------------------------------------
+  Header
+------------------------------------*/
+header {
+  min-width: 300px;
+  width: 100%;
+  height: var(--header-height);
+  background: var(--item-color);
+  border-bottom: 1px solid var(--border-color);
+  box-sizing: border-box;
+  z-index: 1000;
+}
+.header_wrap {
+  height: var(--header-height);
+  padding: 0 var(--padding-side);
+  vertical-align: middle;
+}
+.logo {
+  font-family: 'Lobster', cursive;
+  display: inline-block;
+}
+.logo_link { 
+  display: inline-block;
+}
+.logo_text {
+  line-height: var(--header-height);
+  margin: 0;
+}
+
+/* Button */
+.create_skillcard_button {
+  margin: 9px 0;
+  float: right;
+}
+
+@media screen and (max-width: 800px) {
+  .create_skillcard_button  {
+    margin: 13px 0;
+  }
+}
+
+/*------------------------------------
+  Main
+------------------------------------*/
+main {
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  animation: fadeIn 2s ease 0s 1 normal;
+  background: var(--background-color);
+}
+section { 
+  min-height: 867px;
+  height: calc(100vh - var(--header-height) - 40px); /* 全体 - HeaderHeight - margin */
+  margin: 20px;
+  border-radius: var(--section-border-radius);
+  background: var(--item-color);
+  box-shadow: 0 1px 2px 0 var(--border-color);
+  user-select: none;
+}
+.section_title {
+  margin: 0;
+  padding: 10px 0;
+  background: var(--item-color);
+  border-radius: var(--section-border-radius) var(--section-border-radius) 0 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Skill */
+.skill {
+  width: 500px;
+  overflow-y: scroll;
+  position: relative;
+}
+.skill_wrap {
+  width: 100%;
+  margin: 0 0 20px;
+}
+.skill_wrap .section_title {
+  top: 0;
+  margin: 0;
+  position: fixed;
+  position: sticky;
+  z-index: 1;
+}
+.skill_list {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+.skill_list_label {
+  padding: 10px 10px 5px;
+  grid-column: 1 / 4;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+.skill_item {
+  min-width: 100px;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: var(--item-border-radius);
+  cursor: pointer;
+}
+.skill_item:hover {
+  background: var(--item-hover-color);
+}
+.skill_item:hover > .skill_item_delete {
+  opacity: 1;
+  visibility: visible;
+}
+.skill_item_delete {
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  line-height: 30px;
+  font-size: 2.5rem;
+  position: absolute;
+  color: var(--cross-mark-color);
+}
+.skill_item_logo {
+  width: 50px;
+  height: 50px;
+}
+.skill_item_name {
+  margin: 10px 0;
+}
+.skill_item_star {
+  margin: 5px 0;
+}
+.skill_item_star .star_svg {
+  width: 30px;
+  height: 30px;
+}
+.sortable-chosen {
+  background: var(--item-hover-color);
+}
+
+/* Skill table */
+.skill_table {
+  width: calc(100% - 500px);
+}
+.skill_table_wrap {
+  width: 100%;
+  margin: 0 0 20px;
+}
+.skill_table_main_list {
+  grid-template-columns: repeat(5, 1fr);
+}
+.skill_table_sub_list {
+  grid-template-columns: repeat(1, 1fr);
+}
+.skill_table_main_list, .skill_table_sub_list {
+  margin: 20px;
+  display: grid;
+  grid-gap: 10px;
+}
+.skill_table_main_list .skill_item {
+  height: 151px;
+}
+.skill_table_sub_list .skill_item {
+  width: 70%;
+  padding: 10px 15%;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  text-align: left;
+}
+.skill_table_sub_list .skill_item .skill_item_logo {
+  display: none;
+}
+.skill_table_sub_list .skill_item .skill_item_star {
+  right: 15%;
+  position: absolute;
+}
+.skill_table_emptiness {
+  line-height: 171px;
+  border: inset 1px var(--border-color);
+  border-radius: var(--item-border-radius);
+  color: gray;
+  background: var(--background-color);
+}
+.skill_table_emptiness.is-hide {  
+  opacity: 0;
+  visibility: hidden;
+}
+.skill_table_main_list .skill_table_emptiness {
+  grid-column: 1 / 6;
+}
+.skill_table_sub_list .skill_table_emptiness {
+  line-height: 370px;
+}
+
+@media screen and (max-width: 1280px) {
+  .skill_table {
+    height: unset;
+  }
+  .skill_table_main_list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .skill_table_sub_list .skill_item {
+    padding: 5px 15%;
+  }
+  .skill_table_main_list .skill_table_emptiness {
+    line-height: 300px;
+  }
+  .skill_table_sub_list .skill_table_emptiness {
+    line-height: 270px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  main {
+    flex-direction: column;
+  }
+  .skill {
+    height: unset;
+    overflow-y: unset;
+  }
+  .skill, .skill_table {
+    width: calc(100% - 40px); /* 全体 - margin */
+  }
+  .skill_table_main_list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .skill_item_star_object {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (max-width: 800px) {
+  section { 
+    min-width: 94%;
+    margin: 3%;
+  }
+  .skill_list, .skill_table_main_list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .skill_list_label {
+    grid-column: 1 / 3;
+  }
+}

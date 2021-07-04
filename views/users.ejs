@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %> | SkillCard</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+JP&family=Roboto&display=swap">
+
+    <!-- ▼ CSS ▼ -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        padding-top: 56.25%;
+        height: 0;
+        position: relative;
+        overflow: hidden;
+      }
+      #canvas {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+      #value {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <span id="value"><%= skillcard %></span>
+    <canvas id="canvas" width="1000" height="600"></canvas>
+
+    <!-- ▼ JavaScript ▼ -->
+    <script src="/js/users.js"></script>
+
+  </body>
+
+</html>

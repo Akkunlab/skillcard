@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %> | SkillCard</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+JP&family=Roboto&display=swap">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+
+  <body>
+
+    <div class="wrap">
+
+      <!-- ▼ Blocker ▼ -->
+      <div class="blocker" id="blocker"></div>
+      <div class="modal" id="modal">
+        <span class="modal_close" id="modal_close">✖️</span>
+        <h3 class="modal_title" id="modal_title"></h3>
+        <div class="modal_content" id="modal_content"></div>
+        <div class="modal_alert"><p>コピーしました！</p></div>
+        <button type="button" class="modal_button">コピー</button>
+      </div>
+
+      <!-- ▼ ヘッダー ▼ -->
+      <header>
+        <div class="header_wrap">
+          <div class="logo">
+            <a class="logo_link" href="https://nitfc-skillcard.herokuapp.com/"><h1 class="logo_text">SkillCard</h1></a>
+          </div>
+          <button type="button" class="create_skillcard_button" id="create">生成</button>
+        </div>
+      </header>
+
+      <!-- ▼ メイン ▼ -->
+      <main>
+
+        <!-- ▼ スキルテーブル ▼ -->
+        <section class="skill_table">
+          <div class="skill_table_wrap">
+            <h2 class="section_title">スキルテーブル</h2>
+            <div class="skill_table_item">
+              <h3>メインスキル</h3>
+              <div class="skill_table_main_list" id="main_list">
+                <div class="skill_table_emptiness" draggable="false">スキルをクリックして追加</div>
+              </div>
+              <h3>サブスキル</h3>
+              <div class="skill_table_sub_list" id="sub_list">
+                <div class="skill_table_emptiness">スキルをクリックして追加</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ▼ スキル一覧 ▼ -->
+        <section class="skill">
+          <div class="skill_wrap">
+            <h2 class="section_title">スキル一覧</h2>
+            <div class="skill_list" id="skill_list">
+              <% let listName %>
+              <% let listId %>
+
+              <% for(let i = 0; i < skill_list_name.length; i++) { %>
+                <% listName = skill_list_name[i].displayName %>
+                <% listId = skill_list_name[i].id %>
+                <span class="skill_list_label"><%- listName %></span>
+
+                <% for(let j = 0; j < skill_list[listId].length; j++) { %>
+                  <li class="skill_item" id="<%= skill_list[listId][j].id %>">
+                    <p class="skill_item_name"><%= skill_list[listId][j].displayName %></p>
+                    <object class="skill_item_logo" type="image/svg+xml" data="/img/skill/<%= skill_list[listId][j].id %>.svg"></object>
+                  </li>
+                <% } %>
+              <% } %>
+              <span class="skill_list_label">過去に追加済み</span>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+
+    <!-- ▼ JavaScript ▼ -->
+    <script src="/js/Sortable.min.js"></script>
+    <script type="module" src="/js/generator.js"></script>
+
+  </body>
+
+</html>
